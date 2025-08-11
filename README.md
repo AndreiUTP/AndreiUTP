@@ -10,3 +10,6 @@
 AndreiUTP/AndreiUTP is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
+## The Creator's Mirror
+A minimalist, reflective web app. Open `index.html` in your browser to start journaling.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Creator's Mirror</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!--
+      How to run locally:
+      1. Download this repository or clone it.
+      2. Open this index.html file in any modern web browser.
+
+      Deploying for free with GitHub Pages:
+      1. Commit and push these files to a GitHub repository.
+      2. In your repository's settings, enable GitHub Pages and select the main branch.
+      3. After a few minutes your site will be live at https://<username>.github.io/<repository>/
+    -->
+</head>
+<body>
+    <main id="app" class="fade-in">
+        <div class="mirror">
+            <h1>Who do you choose to be today?</h1>
+            <textarea id="reflection" placeholder="Write your reflection here..."></textarea>
+            <div class="buttons">
+                <button id="viewPast" class="secondary">View Past Reflections</button>
+                <button id="exportPDF" class="secondary">Export as PDF</button>
+                <button id="toggleSound" class="secondary">Play Sound</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for past reflections -->
+    <div id="historyModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close">&times;</button>
+            <h2>Past Reflections</h2>
+            <div id="historyList" class="history-list"></div>
+        </div>
+    </div>
+
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <!-- Main script -->
+    <script src="script.js"></script>
+</body>
+</html>

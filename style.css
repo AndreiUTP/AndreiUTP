@@ -1,0 +1,167 @@
+/* Minimalist styling for The Creator's Mirror */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #2E2E2E;
+  background: linear-gradient(-45deg, #F9F6FF, #ECE9F1, #F9F6FF);
+  background-size: 400% 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: bgFade 20s ease-in-out infinite;
+}
+
+@keyframes bgFade {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.mirror {
+  border: 2px solid #4C3D73;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 8px 16px rgba(76,61,115,0.2);
+  position: relative;
+}
+
+.mirror::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #4C3D73;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  border: 1px solid #4C3D73;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.8);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+textarea:focus {
+  box-shadow: 0 0 8px rgba(76,61,115,0.4);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #4C3D73;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button.secondary {
+  background: #4C3D73;
+}
+
+button:hover,
+button:focus {
+  background: #362959;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden { display: none; }
+
+.modal-content {
+  background: #F9F6FF;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow: auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #2E2E2E;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.history-entry {
+  border-bottom: 1px solid #4C3D73;
+  padding-bottom: 0.5rem;
+}
+
+.history-entry h3 {
+  font-family: 'Playfair Display', serif;
+  color: #4C3D73;
+  margin: 0 0 0.3rem 0;
+}
+
+@media (max-width: 600px) {
+  .mirror {
+    padding: 1rem;
+  }
+}
